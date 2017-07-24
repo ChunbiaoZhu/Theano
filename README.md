@@ -3,7 +3,9 @@ Install
 # Guide
 http://blog.csdn.net/xierhacker/article/details/53035989
 
-#Correct  .theanorc file should be:
+#Correct  
+
+.theanorc file should be:
 
 [global]  
 device=gpu  
