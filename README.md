@@ -47,3 +47,9 @@ ImportError: No module named cv2
  Ubuntu14.04和16.04官方默认更新源sources.list和第三方源推荐（干货！）
   ======================================================================
   http://www.cnblogs.com/zlslch/p/6860229.html
+  
+  Caffe 
+    ======================================================================
+  http://blog.csdn.net/zouyu1746430162/article/details/54095807
+  
+  http://blog.csdn.net/xierhacker/article/details/53035989
