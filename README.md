@@ -1,7 +1,7 @@
 # Theano Install Guide
 
 http://blog.csdn.net/xierhacker/article/details/53035989
-
+ ======================================================================
 [Correct] .theanorc file should be:
  ======================================================================
 [global]  
@@ -25,8 +25,9 @@ optimizer_including=cudnn
 
 
 
-
-cuDNN :/usr/bin/ld: 找不到 -lcudnn should follow:
+cuDNN :/usr/bin/ld: 找不到 -lcudnn 
+ImportError: cuDNN not available: Can not compile with cuDNN. 
+should follow:
  ======================================================================
 NVIDIA provides a library for common neural network operations that especially speeds up Convolutional Neural Networks (CNNs). Again, it can be obtained from NVIDIA (after registering as a developer): https://developer.nvidia.com/cudnn
 
@@ -38,3 +39,11 @@ To check whether it is found by Theano, run the following command:
 
 python -c "from theano.sandbox.cuda.dnn import dnn_available as d; print(d() or d.msg)"
 
+ImportError: No module named cv2
+ ======================================================================
+ pip install opencv-python
+
+ 
+ Ubuntu14.04和16.04官方默认更新源sources.list和第三方源推荐（干货！）
+  ======================================================================
+  http://www.cnblogs.com/zlslch/p/6860229.html
