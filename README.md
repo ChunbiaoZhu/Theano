@@ -1,12 +1,13 @@
 # Theano
 Install
+
 # Guide
 http://blog.csdn.net/xierhacker/article/details/53035989
 
-#Correct  
+##Correct  
 
 .theanorc file should be:
-
+ ======================================================================
 [global]  
 device=gpu  
 floatX=float32 
