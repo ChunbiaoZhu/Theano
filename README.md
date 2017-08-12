@@ -53,3 +53,13 @@ ImportError: No module named cv2
   http://blog.csdn.net/zouyu1746430162/article/details/54095807
   
   http://blog.csdn.net/xierhacker/article/details/53035989
+Caffe Compile Guide
+=============
+I think the reason is you use make to compile, which makes caffe's python port only find libraries in this catalog. Maybe you use cmaketo compile and it could work.
+make clean
+cd caffe-master
+mkdir build
+cd build
+cmake ..
+make all -j8
+I hope I could help you!
