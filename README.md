@@ -67,25 +67,11 @@ I think the reason is you use make to compile, which makes caffe's python port o
 
 
 
-Computer Vision, Machine Learning, Natural Language Process
-wangxiaocvpr@foxmail.com
-
-    亚虎娱乐777
-    首页
-    新随笔
-    联系
-    订阅
-    管理
-
-随笔-445  文章-0  评论-86 
-Some Problems for Deep Learning with Theano && Lasagne framework
-
  
 
 Some Problems for Deep Learning with Theano && Lasagne framework
-
-2017-03-23
-
+=====================================================================
+http://wzmlj.com/wangxiaocvpr/p/6605258.html
  
 
  
