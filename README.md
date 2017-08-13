@@ -471,3 +471,8 @@ salgan_batch_iterator(model, train_data, None)
 File "wangxiao-02-train.py", line 148, in salgan_batch_iterator
 G_obj, D_obj, G_cost = model.G_trainFunction(batch_input,batch_output,batch_patch)
 File "/home/wangxiao/anaconda2/lib/python2.7/site-packages/theano/compile/function_modul
+ 
+ 
+ MATLAB INSTALL FOR LINUX
+ ============================
+ http://www.cnblogs.com/asmer-stone/p/5991012.html
