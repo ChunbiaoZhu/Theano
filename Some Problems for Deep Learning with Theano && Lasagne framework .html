@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Some Problems for Deep Learning with Theano &amp;&amp; Lasagne framework - AHU-WangXiao - 亚虎娱乐777</title>
+<link type="text/css" rel="stylesheet" href="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/bundle-LessIsMoreRight.css">
+<link id="mobile-style" media="only screen and (max-width: 768px)" type="text/css" rel="stylesheet" href="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/bundle-LessIsMoreRight-mobile.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://wzmlj.com/wangxiaocvpr/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://wzmlj.com/wangxiaocvpr/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://wzmlj.com/wangxiaocvpr/wlwmanifest.xml">
+  
+
+
+</head>
+<body bgcolor="d0d0d0">
+<a name="top"></a>
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="http://wzmlj.com/wangxiaocvpr/">Computer Vision, Machine Learning, Natural Language Process</a></div>
+<div class="subtitle">wangxiaocvpr@foxmail.com</div>
+
+
+
+		
+	</div>
+	<div id="navigator">
+		
+<ol id="navList">
+<li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="http://wzmlj.com/">亚虎娱乐777</a></li>
+<li id="nav_myhome"><a id="blog_nav_myhome" class="menu" href="http://wzmlj.com/wangxiaocvpr/">首页</a></li>
+<li id="nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="http://wzmlj.com/i_/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="blog_nav_contact" class="menu" rel="nofollow" href="http://wzmlj.com/msg_/send/AHU-WangXiao">联系</a></li>
+<li id="nav_rss"><a id="blog_nav_rss" class="menu" href="http://wzmlj.com/wangxiaocvpr/rss">订阅</a>
+</li>
+<li id="nav_admin"><a id="blog_nav_admin" class="menu" rel="nofollow" href="http://wzmlj.com/i_/">管理</a></li>
+</ol>
+
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+
+随笔-445&nbsp;
+文章-0&nbsp;
+评论-86&nbsp;
+</div>
+			
+		</div>
+	</div>
+</div>
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://wzmlj.com/wangxiaocvpr/p/6605258.html">Some Problems for Deep Learning with Theano &amp;&amp; Lasagne framework</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p style="text-align: center"><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p style="text-align: center"><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>Some Problems for Deep Learning with Theano &amp;&amp; Lasagne&nbsp;framework</strong></span></p>
+<p style="text-align: center"><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>2017-03-23</strong></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-size: 18px; color: #ff0000; font-family: arial, helvetica, sans-serif">1. theano.function</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　 output = input ** 2&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">　　&nbsp;<span class="n">f = theano.function([input], output)</span></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　 print(f(3))&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　&gt;&gt; the output is: 3^2 = 9. </span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　<img src="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/821593-20170323152420096-1451631078.png" alt=""></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<hr>
+<p><span style="font-size: 18px; color: #ff0000; font-family: arial, helvetica, sans-serif">2. &nbsp;verbose = 1 or 0, does it have any difference ?&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　
+ &nbsp; some deep learning framework such as torch or theano, use this 
+flag to control whether shown some training information on the 
+terminal.&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　 &nbsp; such as: <span style="background-color: #888888">hist = Deep_Q_Network.fit(X_train, y_train, batch_size=batch_size, nb_epoch=1, <span style="color: #ff0000">verbose=1</span>) </span></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　It will display on the terminal:&nbsp;　　<span style="color: #ff0000">loss: ~~~</span></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　<img src="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/821593-20170324121208299-1312986606.png" alt="">&nbsp;　</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　</span></p>
+<hr>
+<p><span style="font-size: 18px; color: #ff0000; font-family: arial, helvetica, sans-serif">3. how to use specific GPU with Theano framework ?&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　--&gt;&gt;&nbsp;<span class="pre" style="color: #ff0000">device=gpu{0,&nbsp;<span class="pre">1,&nbsp;<span class="pre">...} &nbsp;</span></span></span></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif"><span class="pre" style="color: #ff0000"><span class="pre"><span class="pre">　　the answer from:&nbsp;http://www.cnblogs.com/shouhuxianjian/p/4590224.html</span></span></span></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif"><span class="pre" style="color: #ff0000"><span class="pre"><span class="pre">　　<img src="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/821593-20170327204504701-1157428956.png" alt=""></span></span></span></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<hr>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;<span style="color: #ff0000">4.</span>&nbsp;<strong><span style="color: #ff0000">ValueError: GpuJoin: Wrong inputs for input 2 related to inputs 0.!</span></strong></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif"> 0%| | 0/301 [00:00&lt;?, ?it/s]</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Traceback (most recent call last):</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "wangxiao-02-train.py", line 187, in &lt;module&gt;</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    train()     </span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "wangxiao-02-train.py", line 171, in train</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    salgan_batch_iterator(model, train_data, None)</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "wangxiao-02-train.py", line 108, in salgan_batch_iterator</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    G_obj, D_obj, G_cost = model.D_trainFunction(batch_input,batch_output,batch_patch)   #add batch_patch ???</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "/usr/local/lib/python2.7/dist-packages/theano/compile/function_module.py", line 871, in __call__</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    storage_map=getattr(self.fn, 'storage_map', None))</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "/usr/local/lib/python2.7/dist-packages/theano/gof/link.py", line 314, in raise_with_op</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    reraise(exc_type, exc_value, exc_trace)</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "/usr/local/lib/python2.7/dist-packages/theano/compile/function_module.py", line 859, in __call__</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    outputs = self.fn()</span><br><span style="color: #ff0000; font-size: 18px; font-family: arial, helvetica, sans-serif"><strong>ValueError: GpuJoin: Wrong inputs for input 2 related to inputs 0.!</strong></span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Apply
+ node that caused the error: GpuJoin(TensorConstant{1}, 
+GpuElemwise{Composite{scalar_sigmoid((i0 + i1))},no_inplace}.0, 
+GpuFromHost.0)</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Toposort index: 955</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Inputs types: [TensorType(int8, scalar), CudaNdarrayType(float32, (False, True, False, False)), CudaNdarrayType(float32, 4D)]</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong><span style="color: #0000ff">Inputs shapes: [(), (32, 1, 192, 256), (32, 3, 224, 224)]</span></strong></span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Inputs strides: [(), (49152, 0, 256, 1), (150528, 50176, 224, 1)]</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Inputs values: [array(1, dtype=int8), 'not shown', 'not shown']</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Outputs clients: [[GpuContiguous(GpuJoin.0)]]</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">HINT:
+ Re-running with most Theano optimization disabled could give you a 
+back-trace of when this node was created. This can be done with by 
+setting the Theano flag 'optimizer=fast_compile'. If that does not work,
+ Theano optimizations can be disabled with 'optimizer=None'.</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">HINT: Use the Theano flag 'exception_verbosity=high' for a debugprint and storage map footprint of this apply node.</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">what's going on ??? </span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">==&gt;&gt; Because I input wrong image size: as shown in blue !&nbsp;<span style="color: #0000ff"><strong>(32, 1, 192, 256), (32, 3, 224, 224)</strong></span></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<hr>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif"><span style="color: #ff0000">5.&nbsp;</span><span style="color: #ff0000">Error when tring to find the memory information on the GPU: an illegal memory access was encountered</span></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">
+ 0%| | 0/301 [00:00&lt;?, ?it/s]Error when tring to find the memory 
+information on the GPU: an illegal memory access was encountered</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Error
+ freeing device pointer 0x10372a00000 (an illegal memory access was 
+encountered). Driver report 0 bytes free and 0 bytes total </span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">CudaNdarray_uninit: error freeing self-&gt;devdata. (self=0x7f19d0544830, self-&gt;devata=0x10372a00000)</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Error when trying to find the memory information on the GPU: an illegal memory access was encountered</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Error
+ allocating 422125568 bytes of device memory (an illegal memory access 
+was encountered). Driver report 0 bytes free and 0 bytes total </span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Segmentation fault&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">==&gt;&gt; </span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<hr>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif"><span style="color: #ff0000">&nbsp;6.</span> &nbsp;<span style="color: #ff0000"><strong>some explnations about Jacobian matrix, Hessian matrix :&nbsp;</strong></span></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　from:&nbsp;http://blog.csdn.net/lanchunhui/article/details/50234117 </span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<hr>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">7. some basic&nbsp;<span style="color: #ff0000">tutorials</span> from theano Document v0.9:</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　<strong>(1). basic functin definition:</strong></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　&gt;&gt; import numpy as np&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　&gt;&gt; import theano.tensor as T </span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　&gt;&gt; from theano import function&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　&gt;&gt; x = T.dscalar('x')　　-- double style &nbsp; &nbsp;the type we assign to “<span style="color: #ff0000">0-dimensional arrays (<cite>scalar</cite>) of doubles (<cite>d</cite>)</span>”.</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　&gt;&gt; y = T.dscalar('y') </span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　&gt;&gt; z = x + y </span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　&gt;&gt; f = function([x, y], z)</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　when test, just input f(2, 3), then it will return z = 2+3 = array(5.0). We can also use the <span style="color: #ff0000">pp</span> function to pretty-print out the computation associdated to z. </span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　==&gt;&gt; print(pp(z)) 　　==&gt;&gt; (x+y). &nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　Also, we can add two matrices: &nbsp;<span style="color: #ff0000">x = T.dmatrix('x')</span>&nbsp;&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　<img src="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/821593-20170331224242820-301186723.png" alt="">　　</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">　　(2).&nbsp;Derivatives in Theano&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　&lt;1&gt;. Computing Gradients: using <span style="color: #ff0000">T.grad</span> &nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　<img src="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/821593-20170401144537352-1408659044.png" alt=""></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　&lt;2&gt;. Computing the Jacobian&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　this blog provided us a good tutorial about this definiton:&nbsp;<span style="color: #ff0000">http://blog.csdn.net/lanchunhui/article/details/50234117&nbsp;</span></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　<img src="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/821593-20170401144940461-226273860.png" alt=""></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　<img src="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/821593-20170401144948133-1516331832.png" alt=""></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　</span></p>
+<hr>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>8. set the GPU mode in theano framework: </strong></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　<span style="color: #ff0000">vim ~/.theanorc&nbsp;</span></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　and add these lines into this file:</span></p>
+<p><span style="font-size: 18px; color: #ff0000; font-family: arial, helvetica, sans-serif">　　<span class="hljs-title">[global] </span></span></p>
+<p><span style="font-size: 18px; color: #ff0000; font-family: arial, helvetica, sans-serif"><span class="hljs-title">　　<span class="hljs-setting">device = <span class="hljs-value">gpu </span></span></span></span></p>
+<p><span style="font-size: 18px; color: #ff0000; font-family: arial, helvetica, sans-serif"><span class="hljs-title"><span class="hljs-setting"><span class="hljs-value">　　<span class="hljs-setting">floatX=<span class="hljs-value">float32 </span></span></span></span></span></span></p>
+<p><span style="font-size: 18px; color: #ff0000; font-family: arial, helvetica, sans-serif"><span class="hljs-title"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-setting"><span class="hljs-value">　　<span class="hljs-title">[nvcc] </span></span></span></span></span></span></span></p>
+<p><span style="font-size: 18px; color: #ff0000; font-family: arial, helvetica, sans-serif"><span class="hljs-title"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-title">　　<span class="hljs-setting">flags=<span class="hljs-value">--machine=<span class="hljs-number">64 </span></span></span></span></span></span></span></span></span></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif"><span style="color: #ff0000"><span class="hljs-title"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-title"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-number">　　<span class="hljs-title">[lib] <span class="hljs-setting">cnmem=<span class="hljs-value"><span class="hljs-number">100</span></span></span></span></span></span></span></span></span></span></span></span></span>&nbsp;　</span>　</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">==&gt;&gt; then test these codes to see whether it shown success ?</span></p>
+<pre><span class="kn" style="font-family: arial, helvetica, sans-serif; font-size: 18px">from <span class="nn">theano <span class="k">import <span class="n">function<span class="p">, <span class="n">config<span class="p">, <span class="n">shared<span class="p">, <span class="n">tensor
+<span class="kn">import <span class="nn">numpy
+<span class="kn">import <span class="nn">time
+
+<span class="n">vlen <span class="o">= <span class="mi">10 <span class="o">* <span class="mi">30 <span class="o">* <span class="mi">768  <span class="c1"># 10 x #cores x # threads per core
+<span class="n">iters <span class="o">= <span class="mi">1000
+
+<span class="n">rng <span class="o">= <span class="n">numpy<span class="o">.<span class="n">random<span class="o">.<span class="n">RandomState<span class="p">(<span class="mi">22<span class="p">)
+<span class="n">x <span class="o">= <span class="n">shared<span class="p">(<span class="n">numpy<span class="o">.<span class="n">asarray<span class="p">(<span class="n">rng<span class="o">.<span class="n">rand<span class="p">(<span class="n">vlen<span class="p">), <span class="n">config<span class="o">.<span class="n">floatX<span class="p">))
+<span class="n">f <span class="o">= <span class="n">function<span class="p">([], <span class="n">tensor<span class="o">.<span class="n">exp<span class="p">(<span class="n">x<span class="p">))
+<span class="nb">print<span class="p">(<span class="n">f<span class="o">.<span class="n">maker<span class="o">.<span class="n">fgraph<span class="o">.<span class="n">toposort<span class="p">())
+<span class="n">t0 <span class="o">= <span class="n">time<span class="o">.<span class="n">time<span class="p">()
+<span class="k">for <span class="n">i <span class="ow">in <span class="nb">range<span class="p">(<span class="n">iters<span class="p">):
+    <span class="n">r <span class="o">= <span class="n">f<span class="p">()
+<span class="n">t1 <span class="o">= <span class="n">time<span class="o">.<span class="n">time<span class="p">()
+<span class="nb">print<span class="p">(<span class="s2">"Looping <span class="si">%d<span class="s2"> times took <span class="si">%f<span class="s2"> seconds" <span class="o">% <span class="p">(<span class="n">iters<span class="p">, <span class="n">t1 <span class="o">- <span class="n">t0<span class="p">))
+<span class="nb">print<span class="p">(<span class="s2">"Result is <span class="si">%s<span class="s2">" <span class="o">% <span class="p">(<span class="n">r<span class="p">,))
+<span class="k">if <span class="n">numpy<span class="o">.<span class="n">any<span class="p">([<span class="nb">isinstance<span class="p">(<span class="n">x<span class="o">.<span class="n">op<span class="p">, <span class="n">tensor<span class="o">.<span class="n">Elemwise<span class="p">) <span class="ow">and
+              <span class="p">(<span class="s1">'Gpu' <span class="ow">not <span class="ow">in <span class="nb">type<span class="p">(<span class="n">x<span class="o">.<span class="n">op<span class="p">)<span class="o">.<span class="n">__name__<span class="p">)
+              <span class="k">for <span class="n">x <span class="ow">in <span class="n">f<span class="o">.<span class="n">maker<span class="o">.<span class="n">fgraph<span class="o">.<span class="n">toposort<span class="p">()]):
+    <span class="nb">print<span class="p">(<span class="s1">'Used the cpu'<span class="p">)
+<span class="k">else<span class="p">:
+    <span class="nb">print<span class="p">(<span class="s1">'Used the gpu'<span class="p">)</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　<img src="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/821593-20170403164043300-661185360.png" alt=""></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<hr>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>9. No Module named cv2 :</strong></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　<span style="color: #ff0000"><strong>sudo&nbsp;apt-get install Python-OpenCV</strong>&nbsp;</span></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">　　<span style="font-size: 14pt">otherwise, you can try:&nbsp;</span></span></p>
+<pre><span style="color: #ff0000; font-family: arial, helvetica, sans-serif; font-size: 14pt"><strong>　　　　pip install --upgrade setuptools
+　　　　pip install numpy Matplotlib
+　　　　pip install opencv-python</strong></span></pre>
+<p>&nbsp;</p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<hr>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>10.&nbsp;The following error happened while compiling the node':&nbsp;</strong></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">mod.cu(305): warning: subscript out of range</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">mod.cu(313): warning: subscript out of range</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">mod.cu(317): <strong>error: identifier "cudnnSetConvolutionNdDescriptor_v3" is undefined</strong></span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">1 error detected in the compilation of "/tmp/tmpxft_0000053a_00000000-9_mod.cpp1.ii".</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">['nvcc',
+ '-shared', '-O3', '-arch=sm_61', '-m64', '-Xcompiler', 
+'-fno-math-errno,-Wno-unused-label,-Wno-unused-variable,-Wno-write-strings,--machine=64,-DCUDA_NDARRAY_CUH=c72d035fdf91890f3b36710688069b2e,-DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,-fPIC,-fvisibility=hidden',
+ '-Xlinker', 
+'-rpath,/root/.theano/compiledir_Linux-3.19--generic-x86_64-with-Ubuntu-14.04-trusty-x86_64-2.7.6-64/cuda_ndarray',
+ '-I/usr/local/lib/python2.7/dist-packages/theano/sandbox/cuda', 
+'-I/usr/local/cuda/include', 
+'-I/usr/local/lib/python2.7/dist-packages/numpy/core/include', 
+'-I/usr/include/python2.7', 
+'-I/usr/local/lib/python2.7/dist-packages/theano/gof', '-o', 
+'/root/.theano/compiledir_Linux-3.19--generic-x86_64-with-Ubuntu-14.04-trusty-x86_64-2.7.6-64/tmpOSxzD1/bd1168e6726f16baed8c5f60c7ded9d1.so',
+ 'mod.cu', '-L/usr/lib', '-lcudnn', '-lpython2.7', '-lcudart']</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>... and&nbsp;</strong></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">Exception:
+ ('The following error happened while compiling the node', 
+GpuDnnConvDesc{border_mode=(1, 1), subsample=(1, 1), conv_mode='conv', 
+precision='float32'}(MakeVector{dtype='int64'}.0, 
+MakeVector{dtype='int64'}.0), '\n', 'nvcc return status', 2, 'for cmd', 
+'nvcc -shared -O3 -arch=sm_61 -m64 -Xcompiler 
+-fno-math-errno,-Wno-unused-label,-Wno-unused-variable,-Wno-write-strings,--machine=64,-DCUDA_NDARRAY_CUH=c72d035fdf91890f3b36710688069b2e,-DNPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,-fPIC,-fvisibility=hidden
+ -Xlinker 
+-rpath,/root/.theano/compiledir_Linux-3.19--generic-x86_64-with-Ubuntu-14.04-trusty-x86_64-2.7.6-64/cuda_ndarray
+ -I/usr/local/lib/python2.7/dist-packages/theano/sandbox/cuda 
+-I/usr/local/cuda/include 
+-I/usr/local/lib/python2.7/dist-packages/numpy/core/include 
+-I/usr/include/python2.7 
+-I/usr/local/lib/python2.7/dist-packages/theano/gof -o 
+/root/.theano/compiledir_Linux-3.19--generic-x86_64-with-Ubuntu-14.04-trusty-x86_64-2.7.6-64/tmpOSxzD1/bd1168e6726f16baed8c5f60c7ded9d1.so
+ mod.cu -L/usr/lib -lcudnn -lpython2.7 -lcudart', 
+"[GpuDnnConvDesc{border_mode=(1, 1), subsample=(1, 1), conv_mode='conv',
+ precision='float32'}(&lt;TensorType(int64, vector)&gt;, 
+&lt;TensorType(int64, vector)&gt;)]")</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">&nbsp;<img src="Some%20Problems%20for%20Deep%20Learning%20with%20Theano%20&amp;&amp;%20Lasagne%20framework%20_files/821593-20170404104534503-917409555.png" alt=""></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<hr>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">the version of theano is not matched with the code. update the theano will be ok.&nbsp;</span></p>
+<hr>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>11. Theano framework shown an error like this:&nbsp;</strong></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong><span style="color: #ff0000">　　File "/usr/local/lib/python2.7/dist-packages/enum.py", line 199, in __init__ &nbsp; &nbsp; raise EnumBadKeyError(key)&nbsp;</span></strong></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong><span style="color: #ff0000">　　Need 2 paramers (given 4) &nbsp;</span></strong></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">　　　　</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">　　==&gt;&gt;&nbsp;This error is caused when the&nbsp;<a href="https://pypi.python.org/pypi/enum34/" rel="nofollow">enum34</a>&nbsp;module
+ has been installed alongside the old enum module. enum34 is the 
+backport for Python 2.x of the standard enum in Python 3.4. Many 
+packages have started to use it and so it will be installed implicitly 
+while installing another package. enum34 overrides the old enum files 
+and causes this error.</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">You
+ could remove enum34 and get rid of this error. But since Python 3.x has
+ already adapted a new enum type, it might be wiser to uninstall the old
+ enum and rewrite your code to use enum34. Its syntax is shown in&nbsp;<a href="https://codeyarns.com/2015/07/16/attributeerror-with-python-enum/2013/05/01/how-to-use-enum-in-python/" rel="nofollow">this example</a>. &nbsp; This explnation comes from:&nbsp;https://codeyarns.com/2015/07/16/attributeerror-with-python-enum/&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　==&gt;&gt; maybe first you need to do is just install: $ <strong><span style="color: #ff0000">sudo pip install enum34 &nbsp;</span></strong></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　==&gt;&gt; The second main reason is that: <strong>you are using pkle file generted &nbsp;not by your current environments</strong>, it's also caused by enum, this is a bug ! </span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　==&gt;&gt; So, you can re-generate your pkle file and try again. It will be OK.&nbsp;</span></p>
+<hr>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif"><strong>12. Load pkl file in python: </strong></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif"><strong>　　</strong>## Download the mnist dataset if it is not yet available.&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　url = '<span style="color: #ff00ff">http://deeplearning.net/data/mnist/mnist.pkl.gz</span>'&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　filename = '<span style="color: #ff00ff">mnist.pkl.gz</span>'&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　if not os.path.exists(filename):</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　print("Downloading mnist dataset ... ")&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　urlretrieve(url, filename)&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　## we will then load and unpickle the file.&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　import gzip&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　with gzip.open(filename, 'rb') as f:</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">　　　　data = pickle_load(f, encoding='latin-1')&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">13.&nbsp;ValueError: You are tring to use the old GPU back-end. It was removed from Theano. Use <span style="color: #ff0000">device=cuda*</span> now.&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">wangxiao@AHU-Wangxiao:/media/wangxiao/724eaeef-e688-4b09-9cc9-dfaca44079b2/saliency-salgan-2017-master-tracking/scripts--suntao--finalVersion$
+ python wangxiao-02-train.py </span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">Traceback (most recent call last):</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">  File "wangxiao-02-train.py", line 11, in &lt;module&gt;</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">    import theano</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">  File "/usr/local/lib/python2.7/dist-packages/theano/__init__.py", line 67, in &lt;module&gt;</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">    from theano.configdefaults import config</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">  File "/usr/local/lib/python2.7/dist-packages/theano/configdefaults.py", line 119, in &lt;module&gt;</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">    in_c_key=False)</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">  File "/usr/local/lib/python2.7/dist-packages/theano/configparser.py", line 285, in AddConfigVar</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">    configparam.__get__(root, type(root), delete_key=True)</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">  File "/usr/local/lib/python2.7/dist-packages/theano/configparser.py", line 333, in __get__</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">    self.__set__(cls, val_str)</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">  File "/usr/local/lib/python2.7/dist-packages/theano/configparser.py", line 344, in __set__</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">    self.val = self.filter(val)</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">  File "/usr/local/lib/python2.7/dist-packages/theano/configdefaults.py", line 98, in filter</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">    'You are tring to use the old GPU back-end. '</span><br><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">ValueError:
+ You are tring to use the old GPU back-end. It was removed from Theano. 
+Use device=cuda* now. See 
+https://github.com/Theano/Theano/wiki/Converting-to-the-new-gpu-back-end%28gpuarray%29
+ for more information.</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">==&gt;&gt; &nbsp;just replace your gpu back-end with the suggestions, i.e. <span style="color: #ff0000">device=cuda* 　　</span></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">　　 <span style="color: #0000ff">&nbsp;vim ~/.theanorc&nbsp;&nbsp;</span></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">　　and add these lines into this file:&nbsp;</span></p>
+<p><span style="font-size: 18px; color: #0000ff; font-family: arial, helvetica, sans-serif">　　<span class="hljs-title">[global]</span></span></p>
+<p><span style="color: #0000ff; font-family: arial, helvetica, sans-serif; font-size: 18px"><span class="hljs-title">　　<span class="hljs-setting">device =&nbsp;<span class="hljs-value">cuda</span></span></span></span></p>
+<p><span class="hljs-title" style="font-size: 18px; color: #0000ff; font-family: arial, helvetica, sans-serif"><span class="hljs-setting"><span class="hljs-value">　　<span class="hljs-setting">floatX=<span class="hljs-value">float32</span></span></span></span></span></p>
+<p><span class="hljs-title" style="font-size: 18px; color: #0000ff; font-family: arial, helvetica, sans-serif"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-setting"><span class="hljs-value">　　<span class="hljs-title">[nvcc]</span></span></span></span></span></span></p>
+<p><span class="hljs-title" style="font-size: 18px; color: #0000ff; font-family: arial, helvetica, sans-serif"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-title">　　<span class="hljs-setting">flags=<span class="hljs-value">--machine=<span class="hljs-number">64</span></span></span></span></span></span></span></span></span></p>
+<p><span class="hljs-title" style="font-size: 18px; color: #0000ff; font-family: arial, helvetica, sans-serif"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-title"><span class="hljs-setting"><span class="hljs-value"><span class="hljs-number">　　<span class="hljs-title">[lib]&nbsp;<span class="hljs-setting">cnmem=<span class="hljs-value"><span class="hljs-number">100&nbsp;　　</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<hr>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>14.&nbsp;Can not use cuDNN on context None: cannot compile with cuDNN. We got this error:</strong></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">wangxiao@wangxiao:/media/wangxiao/724eaeef-e688-4b09-9cc9-dfaca44079b2/saliency-salgan-2017-master-tracking/scripts--suntao--finalVersion$
+ python wangxiao-02-train.py </span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Can not use cuDNN on context None: cannot compile with cuDNN. We got this error:</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">/usr/bin/ld: cannot find -lcudnn</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">collect2: error: ld returned 1 exit status&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">==&gt;&gt; vim .theanorc&nbsp;</span></p>
+<p><span style="color: #ff0000; font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>[global]<br>device = cuda<br>floatX = float32<br></strong></span></p>
+<p><span style="color: #ff0000; font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>[dnn]</strong></span><br><span style="color: #ff0000; font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>enabled = True</strong></span><br><span style="color: #ff0000; font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>include_path=/usr/local/cuda/include</strong></span><br><span style="color: #ff0000; font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>library_path=/usr/local/cuda/lib64</strong></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>&nbsp;</strong></span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">==&gt;&gt; This will make the cuDNN work.&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Using cuDNN version 5110 on context None</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Mapped name None to device cuda: GeForce GTX 1080 (0000:02:00.0)&nbsp;</span></p>
+<hr>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>15. theano &amp;&amp; Lasagne,&nbsp;ImportError: No module named cuda&nbsp;</strong></span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">Traceback (most recent call last):</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "wangxiao-02-train.py", line 17, in &lt;module&gt;</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    from models.model_salgan import ModelSALGAN</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">
+  File 
+"/media/wangxiao/724eaeef-e688-4b09-9cc9-dfaca44079b2/saliency-salgan-2017-master-tracking/scripts--suntao--finalVersion/models/model_salgan.py",
+ line 7, in &lt;module&gt;</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    import generator</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">
+  File 
+"/media/wangxiao/724eaeef-e688-4b09-9cc9-dfaca44079b2/saliency-salgan-2017-master-tracking/scripts--suntao--finalVersion/models/generator.py",
+ line 11, in &lt;module&gt;</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    import C3D_AlexNet</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">
+  File 
+"/media/wangxiao/724eaeef-e688-4b09-9cc9-dfaca44079b2/saliency-salgan-2017-master-tracking/scripts--suntao--finalVersion/models/C3D_AlexNet.py",
+ line 14, in &lt;module&gt;</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    from lasagne.layers.dnn import Conv3DDNNLayer, MaxPool3DDNNLayer</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "/usr/local/lib/python2.7/dist-packages/lasagne/layers/dnn.py", line 2, in &lt;module&gt;</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    from theano.sandbox.cuda import dnn</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">ImportError: No module named cuda&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px">&nbsp;</span></p>
+<p><span style="font-family: arial, helvetica, sans-serif; font-size: 18px"><strong>==&gt;&gt; &nbsp;change the following codes:&nbsp;</strong></span></p>
+<pre><span style="font-size: 18px; color: #ff0000; font-family: arial, helvetica, sans-serif"><span style="color: #ff0000">export LD_LIBRARY_PATH=/home/wangxiao/cuda-v5.1/lib64:$LD_LIBRARY_PATH
+export CPATH=/home/wangxiao/cuda-v5.1/include:$CPATH
+export LIBRARY_PATH=/home/wangxiao/cuda-v5.1/lib64:$LIBRARY_PATH <br><br></span></span></pre>
+<hr>
+<pre><span style="font-size: 18px; color: #ff0000; font-family: arial, helvetica, sans-serif"><span style="color: #ff0000"><br></span>16. Error: pygpu.gpuarray.GpuArrayException:<strong>&nbsp;out of memory</strong></span></pre>
+<p><span style="font-size: 18px; font-family: arial, helvetica, sans-serif"> 0%| | 0/301 [00:00&lt;?, ?it/s]Traceback (most recent call last):</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "wangxiao-02-train.py", line 231, in &lt;module&gt;</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    train()</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "wangxiao-02-train.py", line 217, in train</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    salgan_batch_iterator(model, train_data, None)</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "wangxiao-02-train.py", line 148, in salgan_batch_iterator</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">    G_obj, D_obj, G_cost = model.G_trainFunction(batch_input,batch_output,batch_patch)</span><br><span style="font-size: 18px; font-family: arial, helvetica, sans-serif">  File "/home/wangxiao/anaconda2/lib/python2.7/site-packages/theano/compile/function_modul</span></p></div></div></div></div></div></div></div></div></div></body></html>
